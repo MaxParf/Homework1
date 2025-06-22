@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  height: 800px;
+  background-color: #E1FF8F;
+  position: relative;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.stars .star {
+  position: absolute;
+}
+.stars .star--1 {
+  top: 94px;
+  left: 63px;
+  width: 57px;
+}
+.stars .star--2 {
+  top: 69px;
+  left: 156px;
+  width: 35px;
+}
+.stars .star--3 {
+  top: 538px;
+  left: 948px;
+  width: 37px;
+}
+.stars .star--4 {
+  top: 568px;
+  left: 1013px;
+  width: 83px;
+}
+.stars .star--5 {
+  position: absolute;
+  top: 0;
+  right: -90px;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.top {
+  padding-top: 196px;
+  margin-left: 120px;
+  max-width: 769px;
+  box-sizing: border-box;
+}
+
+.titel {
+  font-weight: 700;
+  font-size: 64px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 24px;
+  margin-top: 26px;
+  line-height: 32px;
+}
+
+.highlight {
+  font-weight: 600;
+}
+
+.break {
+  display: inline-block;
+  width: 100%;
+}
+
+.ahead {
+  background: #202027;
+  border: 1px solid #202027;
+  border-radius: 60px;
+  width: 247px;
+  height: 66px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 142%;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 48px;
+  cursor: pointer;
+}
+
+.ahead:hover {
+  background: #ffffff;
+  color: #202027;
+}/*# sourceMappingURL=style.css.map */
