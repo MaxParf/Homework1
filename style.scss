@@ -6,67 +6,108 @@
 
 body {
     font-family: "Montserrat", sans-serif;
+    background-color: #202027;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+
 }
 
 .center {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
 }
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 // Шапка
 
 .header {
     height: 800px;
+    max-width: 100%;
     background-color: #E1FF8F;
     position: relative;
+    display: flex;
 }
+
 .stars {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 0;
     pointer-events: none;
 
     .star {
-      position: absolute;
-      // индивидуальные позиции звезд:
-      &--1 { top: 94px; left: 63px; width: 57px; }
-      &--2 { top: 69px; left: 156px; width: 35px; }
-      &--3 { top: 538px; left: 948px; width: 37px; }
-      &--4 { top: 568px; left: 1013px; width: 83px; }
-      &--5 {
         position: absolute;
-        top: 0;
-        right: -90px;
-        height: max-content;
-      }
+
+        // индивидуальные позиции звезд в шапке:
+        &--1 {
+            top: 94px;
+            left: 63px;
+            width: 57px;
+        }
+
+        &--2 {
+            top: 69px;
+            left: 156px;
+            width: 35px;
+        }
+
+        &--3 {
+            position: absolute;
+            top: 538px;
+            right: 455px;
+            width: 37px;
+        }
+
+        &--4 {
+            position: absolute;
+            top: 568px;
+            right: 344px;
+            width: 83px;
+        }
+
+        &--5 {
+            position: absolute;
+            top: 0;
+            right: 0%;
+            height: max-content;
+        }
     }
-  }
+}
+
 .top {
     padding-top: 196px;
     margin-left: 120px;
     max-width: 769px;
     box-sizing: border-box;
+    position: relative;
+    z-index: 2;
 }
+
 .titel {
     font-weight: 700;
     font-size: 64px;
 }
+
 .description {
     font-weight: 400;
     font-size: 24px;
     margin-top: 26px;
     line-height: 32px;
 }
+
 .highlight {
     font-weight: 600;
 }
+
+// все переносы на новую строку
 .break {
-  display: inline-block;
-  width: 100%; // перенос на новую строку
-  // при адаптации ширину можно измень на авто
+    display: inline-block;
+    width: 100%; 
 }
+
 .ahead {
     background: #202027;
     border: 1px solid #202027;
@@ -77,11 +118,140 @@ a {
     font-size: 24px;
     line-height: 142%;
     color: #ffffff;
-    font-family: "Montserrat", sans-serif;
     margin-top: 48px;
     cursor: pointer;
 }
+
 .ahead:hover {
     background: #ffffff;
     color: #202027;
+}
+
+.scroll {
+    width: 100vw;
+    height: 90px;
+    background-color: #BCEC30;
+    position: absolute;
+    bottom: 0;
+}
+
+//Основной контент
+.main {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    &-stars {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &-stars-1 {
+        position: absolute;
+        top: 770px;
+        left: 25px;
+    }
+    &-stars-2 {
+        position: absolute;
+        top: 882px;
+        left: 40px;
+    }
+    &-stars-3 {
+        position: absolute;
+        top: 77px;
+        right: 0;
+    }
+}
+.about {
+    max-width: 1201px;
+    min-height: 1326px;
+    margin-top: 94px;
+    margin-left: 120px;
+    margin-right: 120px;
+    position: relative;
+    z-index: 3;
+
+    &-titel {
+        font-weight: 700;
+        font-size: 64px;
+        color: #FFFFFF;
+    }
+
+    &-description {
+        font-weight: 400;
+        font-size: 24px;
+        color: #FFFFFF;
+        margin-top: 24px;
+    }
+}
+// Блок Об играх - комбинация grid и flex
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    width: 1201px;
+    margin-top: 72px;
+}
+
+.game-column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.game {
+    width: 378px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.picture {
+    width: 378px;
+    border-radius: 30px;
+    overflow: hidden;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.game-enter {
+    padding: 32px 32px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.game-button {
+    background: #F7F7F7;
+    border: 1px solid #F7F7F7;
+    border-radius: 52.58px;
+    width: 108px;
+    height: 36px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #202027;
+    cursor: pointer;
+}
+
+.game__title {
+    font-weight: 700;
+    font-size: 32px;
+    color: #202027;
+}
+
+.small {
+    height: 473px;
+}
+
+.tall {
+    height: 551px;
 }

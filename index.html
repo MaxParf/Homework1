@@ -1,30 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework1</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Homework1</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <section class="header">
-        <div class="stars">
-            <img src="images/Star_2.svg" alt="" class="star star--1">
-            <img src="images/Star_3.svg" alt="" class="star star--2">
-            <img src="images/Star_5.svg" alt="" class="star star--3">
-            <img src="images/Star_4.svg" alt="" class="star star--4">
-            <img src="images/Group_1597880565.svg" alt="" class="star star--5">
-        </div>
-        <div class="top">
-            <h1 class="titel">Добро пожаловать <span class="break">на мой сайт мини-игр</span></h1>
-            <p class="description">Тебе предстоит пройти несколько увлекательных игр. <span class="break">Если готов, нажимай <span class="highlight">«Поехали!»</span> и <span class="highlight">приступай</span>.</span></p>
-            <button class="ahead">Поехали!</button>
-        </div>
-    </section>
-</body>
+    </head>
+    <body>
+        <section class="header">
+            <div class="stars">
+                <img src="images/Star_2.svg" alt class="star star--1">
+                <img src="images/Star_3.svg" alt class="star star--2">
+                <div class="star-group">
+                    <img src="images/Star_5.svg" alt class="star star--3">
+                    <img src="images/Star_4.svg" alt class="star star--4">
+                    <img src="images/Group_1597880565.svg" alt
+                        class="star star--5">
+                </div>
+
+            </div>
+            <div class="top">
+                <h1 class="titel">Добро пожаловать <span class="break">на мой
+                        сайт мини-игр</span></h1>
+                <p class="description">Тебе предстоит пройти несколько
+                    увлекательных игр. <span class="break">Если готов, нажимай
+                        <span class="highlight">«Поехали!»</span> и <span
+                            class="highlight">приступай</span>.</span></p>
+                <button class="ahead">Поехали!</button>
+            </div>
+            <div class="scroll">
+
+            </div>
+        </section>
+
+        <!-- Основной контент -->
+        <section class="main">
+            <div class="main-stars">
+                <img class="main-stars-1" src="images/Star_11.svg"
+                    alt="star_11">
+                <img class="main-stars-2" src="images/Star_12.svg"
+                    alt="star_12">
+                <img class="main-stars-3" src="images/Star_1.svg" alt="star_1">
+            </div>
+            <div class="about">
+                <h2 class="about-titel">Об играх</h2>
+                <p class="about-description">В моей коллекции представлено 6 игр
+                    на разные темы.
+                    <span class="break">Игры несложные — в них может поиграть
+                        каждый.
+                        <span class="break">Все игры
+                            доступны для пользования.
+                        </span>
+                    </span>
+                </p>
+                <div class="games-container">
+                    <div class="game-column">
+                        <a href="game1.html" class="game-link">
+                            <div class="game small">
+                                <div class="picture">
+                                    <img src="images/game_1.png" alt="игра-1">
+                                </div>
+                                <div class="game-enter">
+                                    <button class="game-button">Игра №
+                                        1</button>
+                                    <h3 class="game__title">Угадай число</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="game4.html" class="game-link">
+                            <div class="game tall">
+                                <div class="picture">
+                                    <img src="images/game_4.png" alt="игра-4">
+                                </div>
+                                <div class="game-enter">
+                                    <button class="game-button">Игра №
+                                        4</button>
+                                    <h3 class="game__title">Камень, <span
+                                            class="break">ножницы,
+                                            бумага</span></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-column">
+                        <a href="game2.html" class="game-link">
+                            <div class="game tall">
+                                <div class="picture">
+                                    <img src="images/game_2.png" alt="игра-2">
+                                </div>
+                                <div class="game-enter">
+                                    <button class="game-button">Игра №
+                                        2</button>
+                                    <h3 class="game__title">Простая
+                                        арифметика</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="game5.html" class="game-link">
+                            <div class="game small">
+                                <div class="picture">
+                                    <img src="images/game_5.png" alt="игра-5">
+                                </div>
+                                <div class="game-enter">
+                                    <button class="game-button">Игра №
+                                        5</button>
+                                    <h3 class="game__title">Простая
+                                        викторина</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-column">
+                        <a href="game3.html" class="game-link">
+                            <div class="game small">
+                                <div class="picture">
+                                    <img src="images/game_3.png" alt="игра-3">
+                                </div>
+                                <div class="game-enter">
+                                    <button class="game-button">Игра №
+                                        3</button>
+                                    <h3 class="game__title">Переверни текст</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="game6.html" class="game-link">
+                            <div class="game tall">
+                                <div class="picture">
+                                    <img src="images/game_6.png" alt="игра-6">
+                                </div>
+                                <div class="game-enter">
+                                    <button class="game-button">Игра №
+                                        6</button>
+                                    <h3 class="game__title">Генератор случайных
+                                        цветов</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
