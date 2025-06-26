@@ -116,10 +116,15 @@ a {
     height: 66px;
     font-weight: 600;
     font-size: 24px;
-    line-height: 142%;
     color: #ffffff;
     margin-top: 48px;
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
 }
 
 .ahead:hover {
@@ -240,6 +245,9 @@ a {
     font-size: 16px;
     color: #202027;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .game__title {
