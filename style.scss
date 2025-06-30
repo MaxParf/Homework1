@@ -74,6 +74,23 @@ a {
             right: 0%;
             height: max-content;
         }
+        @media (max-width: 1009px) {
+            &--5 {
+            display: none;
+            }
+        }
+        &--6 {
+            position: absolute;
+            top: 0;
+            right: 0%;
+            height: max-content;
+        }
+        @media (min-width: 1010px) {
+            &--6 {
+            display: none;
+            }
+        }
+
     }
 }
 
@@ -96,6 +113,16 @@ a {
     font-size: 24px;
     margin-top: 26px;
     line-height: 32px;
+}
+@media (max-width: 767px) {
+  .description {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .description-mini {
+    display: none;
+  }
 }
 
 .highlight {
@@ -184,6 +211,11 @@ a {
         font-size: 64px;
         color: #FFFFFF;
     }
+    &-mini {
+        font-weight: 700;
+        font-size: 40px;
+        color: #FFFFFF;
+    }
 
     &-description {
         font-weight: 400;
@@ -191,33 +223,66 @@ a {
         color: #FFFFFF;
         margin-top: 24px;
     }
-}
-// Блок Об играх - комбинация grid и flex
-.games-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    width: 1201px;
-    margin-top: 72px;
-}
+    @media (max-width: 767px) {
+            &-description,
+            &-titel {
+            display: none;
+            }
+        }
+    @media (min-width: 768px) {
+            &-mini {
+            display: none;
+            }
+        }   
 
-.game-column {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
 
-.game {
-    width: 378px;
-    background-color: #FFFFFF;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+
+    .games {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        width: 1201px;
+        height: auto;
+        padding-top: 72px;
+    }
+    .game-item {
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        width: 378px;
+    }
+    .item-1 {    
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        height: 473px;
+    }
+    .item-2 {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 2;
+        height: 512px;
+    }
+    .item-3 {
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1;
+        height: 473px;
+    }
+    .item-4 {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 4;
+        height: 551px;
+    }
+    .item-5 {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+        height: 512px;
+    }
+    .item-6 {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 4;
+        height: 551px;
+    }    
 
 .picture {
-    width: 378px;
+    width: 100%;
     border-radius: 30px;
     overflow: hidden;
     
@@ -234,6 +299,11 @@ a {
     flex-direction: column;
     gap: 16px;
 }
+.game-title {
+    font-weight: 700;
+    font-size: 32px;
+    color: #202027;
+}
 
 .game-button {
     background: #F7F7F7;
@@ -249,17 +319,16 @@ a {
     justify-content: center;
     align-items: center;
 }
-
-.game__title {
-    font-weight: 700;
-    font-size: 32px;
-    color: #202027;
+.play {
+  display: none; // По умолчанию скрываем
+}
+.task {
+    display: none;
+}
+        
 }
 
-.small {
-    height: 473px;
-}
 
-.tall {
-    height: 551px;
-}
+
+@import 'mobile';
+

@@ -1,0 +1,150 @@
+@media (max-width: 768px) {
+  .header {
+    height: 700px;
+  }
+
+  .main {
+    margin: 0;
+    padding: 0;
+  }
+
+  .titel {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .description-mini {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .ahead {
+    width: 285px;
+    height: 55px;
+    font-size: 16px;
+    margin-top: 36px;
+  }
+
+  .stars .star.star--1 {
+    top: 97px;
+    left: 37px;
+    width: 35px;
+  }
+
+  .stars .star.star--2 {
+    top: 64px;
+    left: 91px;
+    width: 21px;
+  }
+
+  .stars .star.star--3 {
+    top: 557px;
+    right: 86px;
+    width: 18px;
+  }
+
+  .stars .star.star--4 {
+    top: 580px;
+    right: 34px;
+    width: 39px;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 147px;
+    margin-left: 17px;
+    margin-right: 17px;
+    position: relative;
+    z-index: 2;
+  }
+  .scroll {
+    height: 51px;
+  }
+  .main-stars {
+    display: none;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .description-mini {
+    display: block;
+  }
+
+  .about-description,
+  .about-titel {
+    display: none;
+  }
+
+  .about-mini {
+    display: block;
+    padding: 0 16px;
+  }
+  .about .games {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+    padding: 0 16px;
+    margin-top: 48px;
+    .game-button {
+      display: none;
+    }
+    .task{
+      display: inline;
+      font-weight: 400;
+      font-size: 16px;
+      color: #000000;
+      margin-top: 16px;
+    }
+    .play {
+      background: #202027;
+      border: 1px solid #202027;
+      border-radius: 60px;
+      width: 255px;
+      height: 55px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 32px;
+    }
+}
+
+.about .game-item {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  height: auto;
+  width: 343px;
+}
+.copyright {
+  width: 100vw;
+  height: 100px;
+  background-color: #BCEC30;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right {
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+}
+  
+}
+
+
+// Скрыть сайт при очень маленькой ширине
+@media (max-width: 374px) {
+  body {
+    display: none;
+  }
+}

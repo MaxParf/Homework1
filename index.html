@@ -21,8 +21,8 @@
                     <img src="images/Star_4.svg" alt class="star star--4">
                     <img src="images/Group_1597880565.svg" alt
                         class="star star--5">
+                    <img src="images/Star_13.svg" alt class="star star--6">
                 </div>
-
             </div>
             <div class="top">
                 <h1 class="titel">Добро пожаловать <span class="break">на мой
@@ -31,6 +31,8 @@
                     увлекательных игр. <span class="break">Если готов, нажимай
                         <span class="highlight">«Поехали!»</span> и <span
                             class="highlight">приступай</span>.</span></p>
+                <p class="description-mini">Тебе предстоит пройти несколько
+                    увлекательных игр. Если готов,<span class="break">нажимай «Поехали!» и приступай</span></p>            
                 <a href="#about" class="ahead">Поехали!</a>
             </div>
             <div class="scroll">
@@ -49,6 +51,7 @@
             </div>
             <div id="about" class="about"> <!-- Якорь -->
                 <h2 class="about-titel">Об играх</h2>
+                <h2 class="about-mini">Мини-игры</h2>
                 <p class="about-description">В моей коллекции представлено 6 игр
                     на разные темы.
                     <span class="break">Игры несложные — в них может поиграть
@@ -58,82 +61,91 @@
                         </span>
                     </span>
                 </p>
-                <div class="games-container">
-                    <div class="game-column">
+                <div class="games">
+                    <div class="game-item item-1">
                         <a href="game1.html" class="game-link">
-                            <div class="game small">
-                                <div class="picture">
-                                    <img src="images/game_1.png" alt="игра-1">
-                                </div>
-                                <div class="game-enter">
-                                    <span class="game-button">Игра № 1</span>
-                                    <h3 class="game__title">Угадай число</h3>
-                                </div>
+                            <div class="picture">
+                                <img src="images/game_1.png" alt="игра-1">
+                            </div>
+                            <div class="game-enter">
+                                <span class="game-button">Игра № 1</span>
+                                <h3 class="game-title">Угадай число</h3>
+                                <p class="task">Попробуй угадать случайное число от 1 до 100.</p>
+                                <span class="play">Играть!</span>
                             </div>
                         </a>
-                        <a href="game4.html" class="game-link">
-                            <div class="game tall">
-                                <div class="picture">
-                                    <img src="images/game_4.png" alt="игра-4">
-                                </div>
-                                <div class="game-enter">
-                                    <span class="game-button">Игра № 4</span>
-                                    <h3 class="game__title">Камень, <span class="break">ножницы, бумага</span>
-                                    </h3>
-                                </div>
+                    </div>
+                    <div class="game-item item-2">
+                        <a href="game2.html" class="game-link">
+                            <div class="picture">
+                                <img src="images/game_2.png" alt="игра-2">
+                            </div>
+                            <div class="game-enter">
+                                <span class="game-button">Игра № 2</span>
+                                <h3 class="game-title">Простая арифметика</h3>
+                                <p class="task">Попробуй решить простые арифметические задачи.</p>
+                                <span class="play">Играть!</span>
                             </div>
                         </a>
-                        </div>
-                        <div class="game-column">
-                            <a href="game2.html" class="game-link">
-                                <div class="game tall">
-                                    <div class="picture">
-                                        <img src="images/game_2.png" alt="игра-2">
-                                    </div>
-                                    <div class="game-enter">
-                                        <span class="game-button">Игра № 2</span>
-                                        <h3 class="game__title">Простая арифметика</h3>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="game5.html" class="game-link">
-                                <div class="game small">
-                                    <div class="picture">
-                                        <img src="images/game_5.png" alt="игра-5">
-                                    </div>
-                                    <div class="game-enter">
-                                        <span class="game-button">Игра № 5</span>
-                                        <h3 class="game__title">Простая викторина</h3>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="game-column">
+                    </div>
+                    <div class="game-item item-3">
                         <a href="game3.html" class="game-link">
-                            <div class="game small">
-                                <div class="picture">
-                                    <img src="images/game_3.png" alt="игра-3">
-                                </div>
-                                <div class="game-enter">
-                                    <span class="game-button">Игра № 3</span>
-                                    <h3 class="game__title">Переверни текст</h3>
-                                </div>
+                            <div class="picture">
+                                <img src="images/game_3.png" alt="игра-3">
+                            </div>
+                            <div class="game-enter">
+                                <span class="game-button">Игра № 3</span>
+                                <h3 class="game-title">Переверни текст</h3>
+                                <p class="task">Попробуй ввести текст, который будет перевернут.</p>
+                                <span class="play">Играть!</span>
                             </div>
                         </a>
+                    </div>
+                    <div class="game-item item-4">
+                        <a href="game4.html" class="game-link">
+                            <div class="picture">
+                                <img src="images/game_4.png" alt="игра-4">
+                            </div>
+                            <div class="game-enter">
+                                <span class="game-button">Игра № 4</span>
+                                <h3 class="game-title">Камень, <span class="break">ножницы, бумага</span>
+                                </h3>
+                                <p class="task">Сыграй в популярную игру против компьютера.</p>
+                                <span class="play">Играть!</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-item item-5">
+                        <a href="game5.html" class="game-link">
+                            <div class="picture">
+                                <img src="images/game_5.png" alt="игра-5">
+                            </div>
+                            <div class="game-enter">
+                                <span class="game-button">Игра № 5</span>
+                                <h3 class="game-title">Простая викторина</h3>
+                                <p class="task">Отвечай на вопросы викторины с вариантами ответов.</p>
+                                <span class="play">Играть!</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="game-item item-6">
                         <a href="game6.html" class="game-link">
-                            <div class="game tall">
-                                <div class="picture">
-                                    <img src="images/game_6.png" alt="игра-6">
-                                </div>
-                                <div class="game-enter">
-                                    <span class="game-button">Игра № 6</span>
-                                    <h3 class="game__title">Генератор случайных цветов</h3>
-                                </div>
+                            <div class="picture">
+                                <img src="images/game_6.png" alt="игра-6">
+                            </div>
+                            <div class="game-enter">
+                                <span class="game-button">Игра № 6</span>
+                                <h3 class="game-title">Генератор случайных цветов</h3>
+                                <p class="task">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
+                                <span class="play">Играть!</span>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
+        <div class="copyright">
+            <p class="right">Все права защищены.</p>
+        </div>
     </body>
 </html>
