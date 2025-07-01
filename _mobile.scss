@@ -60,9 +60,11 @@
     position: relative;
     z-index: 2;
   }
+
   .scroll {
     height: 51px;
   }
+
   .main-stars {
     display: none;
   }
@@ -84,6 +86,7 @@
     display: block;
     padding: 0 16px;
   }
+
   .about .games {
     display: grid;
     grid-template-columns: 1fr;
@@ -91,16 +94,19 @@
     width: 100%;
     padding: 0 16px;
     margin-top: 48px;
+
     .game-button {
       display: none;
     }
-    .task{
+
+    .task {
       display: inline;
       font-weight: 400;
       font-size: 16px;
       color: #000000;
       margin-top: 16px;
     }
+
     .play {
       background: #202027;
       border: 1px solid #202027;
@@ -116,29 +122,31 @@
       align-items: center;
       margin-top: 32px;
     }
-}
+  }
 
-.about .game-item {
-  grid-column: auto !important;
-  grid-row: auto !important;
-  height: auto;
-  width: 343px;
-}
-.copyright {
-  width: 100vw;
-  height: 100px;
-  background-color: #BCEC30;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.right {
-  font-weight: 600;
-  font-size: 16px;
-  color: #000000;
-}
-  
+  .about .game-item {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: auto;
+    width: 343px;
+  }
+
+  .copyright {
+    width: 100vw;
+    height: 100px;
+    background-color: #BCEC30;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+  }
+
 }
 
 
