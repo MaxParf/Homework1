@@ -74,20 +74,23 @@ a {
             right: 0%;
             height: max-content;
         }
+
         @media (max-width: 1009px) {
             &--5 {
-            display: none;
+                display: none;
             }
         }
+
         &--6 {
             position: absolute;
             top: 0;
             right: 0%;
             height: max-content;
         }
+
         @media (min-width: 1010px) {
             &--6 {
-            display: none;
+                display: none;
             }
         }
 
@@ -114,15 +117,17 @@ a {
     margin-top: 26px;
     line-height: 32px;
 }
+
 @media (max-width: 767px) {
-  .description {
-    display: none;
-  }
+    .description {
+        display: none;
+    }
 }
+
 @media (min-width: 768px) {
-  .description-mini {
-    display: none;
-  }
+    .description-mini {
+        display: none;
+    }
 }
 
 .highlight {
@@ -132,7 +137,7 @@ a {
 // все переносы на новую строку
 .break {
     display: inline-block;
-    width: 100%; 
+    width: 100%;
 }
 
 .ahead {
@@ -172,6 +177,7 @@ a {
     display: flex;
     justify-content: center;
     position: relative;
+
     &-stars {
         position: absolute;
         inset: 0;
@@ -181,22 +187,26 @@ a {
         flex-direction: column;
         width: 100%;
     }
+
     &-stars-1 {
         position: absolute;
         top: 770px;
         left: 25px;
     }
+
     &-stars-2 {
         position: absolute;
         top: 882px;
         left: 40px;
     }
+
     &-stars-3 {
         position: absolute;
         top: 77px;
         right: 0;
     }
 }
+
 .about {
     max-width: 1201px;
     min-height: 1326px;
@@ -211,6 +221,7 @@ a {
         font-size: 64px;
         color: #FFFFFF;
     }
+
     &-mini {
         font-weight: 700;
         font-size: 40px;
@@ -223,17 +234,20 @@ a {
         color: #FFFFFF;
         margin-top: 24px;
     }
+
     @media (max-width: 767px) {
-            &-description,
-            &-titel {
+
+        &-description,
+        &-titel {
             display: none;
-            }
         }
+    }
+
     @media (min-width: 768px) {
-            &-mini {
+        &-mini {
             display: none;
-            }
-        }   
+        }
+    }
 
 
 
@@ -245,90 +259,261 @@ a {
         height: auto;
         padding-top: 72px;
     }
+
     .game-item {
         background-color: #FFFFFF;
         border-radius: 30px;
         width: 378px;
     }
-    .item-1 {    
+
+    .item-1 {
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
         height: 473px;
     }
+
     .item-2 {
         grid-column: 2 / span 1;
         grid-row: 1 / span 2;
         height: 512px;
     }
+
     .item-3 {
         grid-column: 3 / span 1;
         grid-row: 1 / span 1;
         height: 473px;
     }
+
     .item-4 {
         grid-column: 1 / span 1;
         grid-row: 2 / span 4;
         height: 551px;
     }
+
     .item-5 {
         grid-column: 2 / span 1;
         grid-row: 3 / span 1;
         height: 512px;
     }
+
     .item-6 {
         grid-column: 3 / span 1;
         grid-row: 2 / span 4;
         height: 551px;
-    }    
+    }
 
-.picture {
-    width: 100%;
-    border-radius: 30px;
-    overflow: hidden;
-    
+    .picture {
+        width: 100%;
+        border-radius: 30px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .game-enter {
+        padding: 32px 32px 32px 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .game-title {
+        font-weight: 700;
+        font-size: 32px;
+        color: #202027;
+    }
+
+    .game-button {
+        background: #F7F7F7;
+        border: 1px solid #F7F7F7;
+        border-radius: 52.58px;
+        width: 108px;
+        height: 36px;
+        font-weight: 500;
+        font-size: 16px;
+        color: #202027;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .play {
+        display: none; // По умолчанию скрываем
+    }
+
+    .task {
+        display: none;
+    }
+
+}
+
+.alt {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    &-stars {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+
+        flex-direction: column;
+        width: 100%;
+        &-1 {
+            position: absolute;
+            top: 93px;
+            right: 124px;
+            width: 35.15px;
+            height: 35.15px;
+        }
+        &-2 {
+            position: absolute;
+            top: 126px;
+            right: 45px;
+            width: 68.86px;
+            height: 68.86px;
+        }
+        &-3 {
+            position: absolute;
+            bottom: 45px;
+            right: 150px;
+            width: 41px;
+            height: 41px;
+        }
+        &-4 {
+            position: absolute;
+            bottom: 65px;
+            right: 52px;
+            width: 69px;
+            height: 69px;
+        }
+    }
+
+}
+
+.alt-about {
+    min-width: 1200px;
+    position: relative;
+    z-index: 3;
+    margin-bottom: 144px;
+
+    &-titel {
+        font-weight: 700;
+        font-size: 64px;
+        color: #FFFFFF;
+    }
+
+    .alt-games {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        margin-top: 72px;
+    }
+
+    .alt-game {
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        width: 1200px;
+        height: 500px;
+
+    }
+
+    .alt-item-1 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .alt-item-2 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .alt-item-3 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .alt-item-4 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .alt-item-5 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .alt-item-6 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+
+.alt-game-enter {
+    margin: 48px 48px 0px 48px;
+    width: 504px;
+    height: 500px;
+}
+
+.alt-game-title {
+    font-weight: 700;
+    font-size: 48px;
+    color: #202027;
+}
+
+.alt-task {
+    font-weight: 400;
+    font-size: 24px;
+    color: #202027;
+    margin-top: 24px;
+}
+
+.alt-play {
+    background: #202027;
+    border: 1px solid #202027;
+    border-radius: 60px;
+    width: 247px;
+    height: 66px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.alt-picture {
+    width: 600px;
+    height: 100%;
+
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 }
-
-.game-enter {
-    padding: 32px 32px 32px 36px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-.game-title {
-    font-weight: 700;
-    font-size: 32px;
-    color: #202027;
-}
-
-.game-button {
-    background: #F7F7F7;
-    border: 1px solid #F7F7F7;
-    border-radius: 52.58px;
-    width: 108px;
-    height: 36px;
-    font-weight: 500;
-    font-size: 16px;
-    color: #202027;
-    cursor: pointer;
+  .copyright {
+    width: 100vw;
+    height: 150px;
+    background-color: #BCEC30;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.play {
-  display: none; // По умолчанию скрываем
-}
-.task {
-    display: none;
-}
-        
-}
+  }
 
+  .right {
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+  }
 
 
 @import 'mobile';
-

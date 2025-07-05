@@ -1,76 +1,74 @@
-let a = 10;
-alert(a);
-a = 20;
-alert(a);
+// Задание 1
+// Создаем переменную с паролем
+let password = 'пароль123';
 
-const firstIphone = 2007;
-alert(firstIphone);
+// Запрашиваем ввод пароля у пользователя
+let userInput = prompt('Введите пароль');
 
-const jsCreator = "Brendan Eich";
-alert(jsCreator);
+// Проверка пароля
+if (userInput === password) {
+  alert('Пароль введен верно');
+} else {
+  alert('Пароль введен неправильно');
+}
 
-let b = 10;
-let c = 2;
-alert("Сумма:" + (b + c));
-alert("Разность:" + (b - c));
-alert("Произведение:" + (b * c));
-alert("Частное:" + (b / c));     
+// Задание 2
+// Присваиваем переменной C любое число
+let с = -3;
+// Если переменная > 0 и < 10 то верно
+if (с > 0 && c < 10) {
+    console.log('Верно');
+}
+else {
+    console.log('Неверно');
+} 
 
-let result = 2 ** 5;
-alert(result); 
+// Задание 3
+// Присваиваем переменным d и e любые числа
+let d = 150;
+let e = 50;
+// Если значения d или e > 100 то верно
+if (d > 100 || e > 100) {
+    console.log('Верно');
+}
+else {
+    console.log('Неверно')
+}
 
-let d = 9;
-let e = 2;
-let remainder = d % e;
-alert(remainder);
+// Задание 4
+let a = '2';
+let b = '3';
+// Преобразуем текстовые значения в числовые
+alert(Number(a) + Number(b));
 
-let number = 1;
-number += 5;
-number -= 3;
-number *= 7;
-number /= 3;
-number ++;
-number --;
-alert(number);
-
-let age = prompt("Сколько вам лет?");
-alert(age);
-
-let user = {
-  name: "Вася", // строковое значение
-  age: 30,      // числовое значение
-  isAdmin: true // булево значение
-};
-console.log(user);
-alert(user.name);
-
-let userName = prompt("Ввидите Ваше имя");
-alert(`Привет, ${userName}!`);
-
-//Дополнительное задание
-
-// Шаг 1: Пользователь загадывает число
-let num = prompt("Загада любое число");
-
-// Преобразуем введённое значение в число
-num = Number(num);
-
-// Шаг 2: Удвваеваем задуманное число
-let dbl = num * 2;
-alert("Удвоенное число: " + dbl);
-
-// Шаг 3: Плюс десять
-let plusTen = dbl + 10;
-alert("После прибавления 10: " + plusTen);
-
-// Шаг 4: Делим на два
-let divided = plusTen / 2;
-alert("После деления на 2: " + divided);
-
-// Шаг 5: Вычтем задуманное число
-let total = divided - num;
-alert("После вычитания загаданного числа: " + total);
-
-// Шаг 6: Сообщаем результат
-alert(total);
-
+// Задание 5
+// Присваеваем переменной monthNumber номер любого из 12 месяцев
+let monthNumber = 12;
+// Если значение < 1 или > 12 - Ошибка ввода
+if (monthNumber < 1 || monthNumber > 12) {
+  console.log("Ошибка ввода");
+} else {
+    // При значениях 12,1,2 ответ Зима и т.д
+  switch (monthNumber) {
+    case 12:
+    case 1:
+    case 2:
+      console.log("Зима");
+      break;
+    case 3:
+    case 4:
+    case 5:
+      console.log("Весна");
+      break;
+    case 6:
+    case 7:
+    case 8:
+      console.log("Лето");
+      break;
+    case 9:
+    case 10:
+    case 11:
+      console.log("Осень");
+      break;
+  }
+}
