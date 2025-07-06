@@ -50,7 +50,7 @@ if (monthNumber < 1 || monthNumber > 12) {
 } else {
     // При значениях 12,1,2 ответ Зима и т.д
   switch (monthNumber) {
-    case 12:
+    case 12: 
     case 1:
     case 2:
       console.log("Зима");
@@ -71,4 +71,5 @@ if (monthNumber < 1 || monthNumber > 12) {
       console.log("Осень");
       break;
   }
-}
+} 
+ 
