@@ -1,75 +1,48 @@
 // Задание 1
-// Создаем переменную с паролем
-let password = 'пароль123';
-
-// Запрашиваем ввод пароля у пользователя
-let userInput = prompt('Введите пароль');
-
-// Проверка пароля
-if (userInput === password) {
-  alert('Пароль введен верно');
-} else {
-  alert('Пароль введен неправильно');
+for (let i = 0; i < 2; i++) {
+  console.log('Привет');
 }
 
 // Задание 2
-// Присваиваем переменной C любое число
-let с = -3;
-// Если переменная > 0 и < 10 то верно
-if (с > 0 && c < 10) {
-    console.log('Верно');
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
 }
-else {
-    console.log('Неверно');
-} 
 
 // Задание 3
-// Присваиваем переменным d и e любые числа
-let d = 150;
-let e = 50;
-// Если значения d или e > 100 то верно
-if (d > 100 || e > 100) {
-    console.log('Верно');
-}
-else {
-    console.log('Неверно')
+for (let i = 7; i <= 22; i++) {
+  console.log(i);
 }
 
 // Задание 4
-let a = '2';
-let b = '3';
-// Преобразуем текстовые значения в числовые
-alert(Number(a) + Number(b));
+const obj = {
+  "Коля": '200',
+  "Вася": '300',
+  "Петя": '400'
+};
+
+for (let name in obj) {
+  console.log(`${name} — зарплата ${obj[name]} долларов`);
+}
 
 // Задание 5
-// Присваеваем переменной monthNumber номер любого из 12 месяцев
-let monthNumber = 12;
-// Если значение < 1 или > 12 - Ошибка ввода
-if (monthNumber < 1 || monthNumber > 12) {
-  console.log("Ошибка ввода");
-} else {
-    // При значениях 12,1,2 ответ Зима и т.д
-  switch (monthNumber) {
-    case 12: 
-    case 1:
-    case 2:
-      console.log("Зима");
-      break;
-    case 3:
-    case 4:
-    case 5:
-      console.log("Весна");
-      break;
-    case 6:
-    case 7:
-    case 8:
-      console.log("Лето");
-      break;
-    case 9:
-    case 10:
-    case 11:
-      console.log("Осень");
-      break;
-  }
+let n = 1000;
+//num - кол-во итераций
+let num;
+// считаем кол-во итераций
+for (num = 0; n >= 50; num++) {
+  n = n / 2;
+}
+
+console.log(`Результат: ${n}`);
+console.log(`Итераций: ${num}`);
+
+// Задание 6
+// Допустим первая пятница это 1-е число
+const firstFriday = 1;
+// Всего 31 день
+const daysInMonth = 31;
+// Цикл (начало day - первая пятница, условие число <= 31, + неделя) )
+for (let day = firstFriday; day <= daysInMonth; day += 7) {
+  console.log(`Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.`);
 } 
- 
+
