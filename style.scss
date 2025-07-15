@@ -467,7 +467,8 @@ a {
     color: #202027;
 }
 
-.alt-task {
+.alt-task,
+.alt-message {
     font-weight: 400;
     font-size: 24px;
     color: #202027;
@@ -487,6 +488,21 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 32px;
+}
+.alt-play:hover {
+    background: #ffffff;
+    color: #202027;
+}
+
+.alt-input {
+    border: 1px solid #202027;
+    border-radius: 60px;
+    width: 247px;
+    height: 66px;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
     margin-top: 32px;
 }
 
