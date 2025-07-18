@@ -1,6 +1,5 @@
 let playBtn = document.querySelector('#mini-game-1 .alt-play');
 let container = document.querySelector('#mini-game-1 .alt-game-enter');
-
 // Объявляем переменные
 let isGameStarted = false;
 let secretNumber;
@@ -14,8 +13,7 @@ playBtn.addEventListener('click', function (event) {
     // Начинаем игру
     isGameStarted = true;
     playBtn.textContent = 'Проверить!';
-
-    // Удаляем старые элементы игры и резултаты
+    // Удаляем прежние результаты игры
     if (input && input.remove) {
       input.remove();
     }
@@ -27,7 +25,6 @@ playBtn.addEventListener('click', function (event) {
 
     input = document.createElement('input');
     input.classList.add('alt-input');
-
     // Интерфейс пользователя
     message = document.createElement('p');
     message.classList.add('alt-message');
