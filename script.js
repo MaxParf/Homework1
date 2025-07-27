@@ -1,3 +1,5 @@
+//  Игра №1
+//  Угадай число
 let playBtn = document.querySelector('#mini-game-1 .alt-play');
 let container = document.querySelector('#mini-game-1 .alt-game-enter');
 // Объявляем переменные
@@ -51,98 +53,78 @@ playBtn.addEventListener('click', function (event) {
   }
 });
 
-// Задание 1
-function getMin(a, b) {
-  if (a < b) {
-    return a;
+// Игра №2
+// Простая арифметика
+let playBtn2 = document.querySelector('#mini-game-2 .alt-play');
+let container2 = document.querySelector('#mini-game-2 .alt-game-enter');
+
+let isArithmeticStarted = false;
+let currentAnswer;
+let input2;
+let message2;
+
+playBtn2.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  if (!isArithmeticStarted) {
+    // Начинаем игру
+    isArithmeticStarted = true;
+    playBtn2.textContent = 'Проверить!';
+
+    // Удаляем старые элементы
+    if (input2 && input2.remove) input2.remove();
+    if (message2 && message2.remove) message2.remove();
+
+    // Генерируем задачу
+    const operators = ['+', '-', '*', '/'];
+    const a = Math.floor(Math.random() * 50) + 1;
+    const b = Math.floor(Math.random() * 49) + 1;
+    const operator = operators[Math.floor(Math.random() * operators.length)];
+
+    let expression = `${a} ${operator} ${b}`;
+    let result;
+
+    // Вычисляем правильный ответ
+    switch (operator) {
+      case '+': result = a + b; break;
+      case '-': result = a - b; break;
+      case '*': result = a * b; break;
+      case '/': result = Number((a / b).toFixed(2)); break;
+    }
+
+    currentAnswer = result;
+
+    // Интерфейс: показать пример и поле ввода
+    message2 = document.createElement('p');
+    message2.classList.add('alt-message');
+    message2.textContent = `Реши: ${expression}`;
+
+    input2 = document.createElement('input');
+    input2.classList.add('alt-input');
+    input2.type = 'text';
+    input2.placeholder = 'Ваш ответ';
+
+    container2.appendChild(message2);
+    container2.appendChild(input2);
+
   } else {
-    return b;
+    // Проверяем ответ пользователя
+    let userAnswer = input2.value.trim();
+
+    if (userAnswer === '') {
+      message2.textContent = 'Введите ответ!';
+      return;
+    }
+
+    // Преобразуем строку в число, округляем до 2 знаков для деления
+    let userNumber = Number(Number(userAnswer).toFixed(2));
+
+    if (userNumber === currentAnswer) {
+      message2.textContent = 'Отлично!';
+      playBtn2.textContent = 'Играть!';
+      isArithmeticStarted = false;
+    } else {
+      message2.textContent = `Неверно!`;
+    }
   }
-}
-
-// Задание 2
-function checkEvenOrOdd(n) {
-  // Если остаток равен 0 - число четное
-  if (n % 2 === 0) {
-    return 'Число четное';
-  } else {
-    return 'Число нечетное';
-  }
-}
-
-// Задание 3
-// Вывод квадрата числа 
-function showSquare(num) {
-  console.log(num * num);
-}
-// Возврат квадрата числа
-function getSquare(num) {
-  return num * num;
-}
-
-// Задание 4
-function askAge() {
-  let age = prompt("Сколько вам лет?");
-  age = Number(age);
-
-  if (age < 0) {
-    alert("Вы ввели неправильное значение");
-  } else if (age >= 0 && age <= 12) {
-    alert("Привет, друг!");
-  } else if (age >= 13) {
-    alert("Добро пожаловать!");
-  }
-}
-
-// Задание 5
-function multiplyIfNumbers(a, b) {
-  // Преобразуем входящие значения в числа
-  a = Number(a);
-  b = Number(b);
-
-  // Проверяем на числа
-  if (isNaN(a) || isNaN(b)) {
-    return 'Одно или оба значения не являются числом';
-  }
-
-  // Если числа — возврат произведения
-  return a * b;
-}
-
-// Задание 6
-function cubeNumber() {
-  // Запросили число
-  let userInput = prompt("Введите число от 0 до 10:");
-  let number = Number(userInput);
-  
-  // Если не число
-  if (isNaN(number)) {
-    return 'Переданный параметр не является числом';
-  }
-  // Если число возврат куб числа
-  return `${number} в кубе равняется ${number ** 3}`;
-}
-
-// Задание 7
-// Создаем переменную для объекта круг
-const circle1 = {
-  radius: 5,
-  getArea: function() {
-    // ПиR2
-    return Math.PI * this.radius ** 2;
-  },
-  getPerimeter: function() {
-    return 2 * Math.PI * this.radius;
-  }
-};
-
-const circle2 = {
-  radius: 8,
-  getArea: function() {
-    // 2ПиR
-    return Math.PI * this.radius ** 2;
-  },
-  getPerimeter: function() {
-    return 2 * Math.PI * this.radius;
-  }
-};
+});
