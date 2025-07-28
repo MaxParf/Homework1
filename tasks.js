@@ -61,14 +61,10 @@ if (num.includes(Number(userInput))) {
 
 // Задание 8
 const str = 'abcdef';
-
-const sixthArr = str.split(''); // строку в массив
-
-const reversedArr = sixthArr.reverse(); // разворачиваем
-
-const reversedStr = reversedArr.join(''); // массив в строку
-
+// три в одном
+const reversedStr = str.split('').reverse().join(''); 
 console.log(reversedStr); // 'fedcba'
+
 
 // Задание 9
 const seventhArr = [[1, 2, 3], [4, 5, 6]];
@@ -76,17 +72,11 @@ const flattened = [...seventhArr[0], ...seventhArr[1]];
 console.log(flattened); // [1, 2, 3, 4, 5, 6]
 
 // Задание 10
-const numbers = [3, 7, 1, 5, 9]; // массив с произвольными числами от 1 до 10
+const numbers = [3, 7, 1, 5, 9];
 
-for (let i = 0; i < numbers.length; i++) {
-  // Проверяем, есть ли следующий элемент, чтобы не выйти за пределы массива
-  if (i + 1 < numbers.length) {
-    const sum = numbers[i] + numbers[i + 1];
-    console.log(`Сумма элементов с индексами ${i} и ${i + 1} равна ${sum}`);
-  } else {
-    // Если следующего элемента нет, можно вывести сообщение или просто ничего не делать
-    console.log(`Элемент с индексом ${i} — последний, следующего нет`);
-  }
+for (let i = 0; i < numbers.length - 1; i++) {
+  const sum = numbers[i] + numbers[i + 1];
+  console.log(`Сумма элементов с индексами ${i} и ${i + 1} равна ${sum}`);
 }
 
 // Задание 11
