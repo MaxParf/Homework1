@@ -10,14 +10,9 @@ for (let i = 0; i < firstArr.length; i++) {
 
 // Задание 2
 const secondArr = [1, 5, 4, 10, 0, 3];
-let i = 0; // начинаем с первого индекса
+const index = secondArr.indexOf(4);
+console.log(index); // Отсчет с нуля - Ответ 2
 
-while (i < secondArr.length) {
-  if (secondArr[i] === 4) { // Если нашли 4
-    console.log(i);
-    break; // прерываем цикл
-  }
-}
 
 // Задание 3
 const thirdArr = [1, 3, 5, 10, 20];
@@ -46,12 +41,13 @@ console.log(fourthArr);
 // Задание 6
 const fifthArr = [9, 8, 7, 'a', 6, 5];
 
-// Cортируем
-fifthArr.sort(); // сортируем все как строки
+fifthArr.sort(); // Сортируем массив
 
-const effect = fifthArr.filter(item => item !== 'a'); // удоляем найденую 'a'
+console.log(fifthArr); // Получаем ['5', '6', '7', '8', '9', 'a']
 
-console.log(effect); // [5, 6, 7, 8, 9]
+const onlyNumbers = fifthArr.filter(item => typeof item === 'number'); // Оставляем только числа
+
+console.log(onlyNumbers); // Получаем [5, 6, 7, 8, 9]
 
 // Задание 7
 const num = [9, 8, 7, 6, 5];

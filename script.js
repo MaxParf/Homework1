@@ -118,13 +118,17 @@ playBtn2.addEventListener('click', function (event) {
 
     // Преобразуем строку в число, округляем до 2 знаков для деления
     let userNumber = Number(Number(userAnswer).toFixed(2));
-
+    
+    // Независимо от ответа кнопка возвращает Играть
     if (userNumber === currentAnswer) {
-      message2.textContent = 'Отлично!';
-      playBtn2.textContent = 'Играть!';
-      isArithmeticStarted = false;
-    } else {
-      message2.textContent = `Неверно!`;
-    }
+    message2.textContent = 'Отлично!';
+    playBtn2.textContent = 'Играть!';
+    isArithmeticStarted = false;
+  } else {
+    message2.textContent = `Неверно!`;
+    playBtn2.textContent = 'Играть!';
+    isArithmeticStarted = false;
+  }
+
   }
 });
