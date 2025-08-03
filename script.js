@@ -132,3 +132,147 @@ playBtn2.addEventListener('click', function (event) {
 
   }
 });
+
+// Игра №3 — Переверни текст
+let playBtn3 = document.querySelector('#mini-game-3 .alt-play');
+let container3 = document.querySelector('#mini-game-3 .alt-game-enter');
+
+let isReverseStarted = false;
+let input3;
+let message3;
+
+playBtn3.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  if (!isReverseStarted) {
+    isReverseStarted = true;
+    playBtn3.textContent = 'Перевернуть!';
+
+    // Удаляем старые элементы, если есть
+    if (input3 && input3.remove) input3.remove();
+    if (message3 && message3.remove) message3.remove();
+
+    // Инструкция
+    message3 = document.createElement('p');
+    message3.classList.add('alt-message');
+    message3.textContent = 'Введите текст, который вы хотите перевернуть:';
+
+    // Поле ввода
+    input3 = document.createElement('input');
+    input3.classList.add('alt-input');
+    input3.type = 'text';
+    input3.placeholder = 'Ваш текст';
+
+    container3.appendChild(message3);
+    container3.appendChild(input3);
+
+  } else {
+    let userText = input3.value.trim();
+
+    if (userText === '') {
+      message3.textContent = 'Пожалуйста, введите текст!';
+      return;
+    }
+
+    // Переворачиваем текст
+    let reversed = reverseText(userText);
+
+    message3.textContent = `${reversed}`;
+    playBtn3.textContent = 'Играть!';
+    isReverseStarted = false;
+  }
+});
+
+// Функция переворота строки
+function reverseText(text) {
+  return text.split('').reverse().join('');
+}
+
+
+
+const quiz = [
+  {
+    question: "Столица Франции",
+    options: ["1. Рим", "2. Париж", "3. Мытищи"],
+    correctAnswer: 2
+  },
+  {
+    question: "Столица Гондураса",
+    options: ["1. Тегусигальпа", "2. Москва", "3. Мытищи"],
+    correctAnswer: 1
+  },
+  {
+    question: "Столица Мира",
+    options: ["1. Мытыщи", "2. Нью Йорк", "3. Ваш любимый город"],
+    correctAnswer: 3
+  }
+];
+
+const playBtn5 = document.querySelector('#mini-game-5 .alt-play');
+const container5 = document.querySelector('#mini-game-5 .alt-game-enter');
+const taskParagraph = container5.querySelector('.alt-task'); // существующий параграф для вывода вопроса и вариантов
+
+let input5;
+let currentQuestionIndex = 0;
+let correctCount = 0;
+let quizStarted = false;
+
+playBtn5.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  if (!quizStarted) {
+    quizStarted = true;
+    currentQuestionIndex = 0;
+    correctCount = 0;
+    playBtn5.textContent = 'Ответить';
+
+    // Создаём поле ввода, если его нет
+    if (!input5) {
+      input5 = document.createElement('input');
+      input5.type = 'text';
+      input5.classList.add('alt-input');
+      input5.placeholder = 'Ответ (1, 2 или 3)';
+      container5.appendChild(input5);
+    }
+    input5.value = '';
+
+    showQuestion();
+
+  } else {
+    const userAnswer = input5.value.trim();
+
+    if (userAnswer === '') {
+      taskParagraph.textContent = 'Введите ответ!'; 
+      showQuestion(); // чтобы вопрос и варианты остались видны
+      return;
+    }
+
+    const currentQuiz = quiz[currentQuestionIndex];
+
+    if (Number(userAnswer) === currentQuiz.correctAnswer) {
+      correctCount++;
+    }
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < quiz.length) {
+      input5.value = '';
+      showQuestion();
+    } else {
+      alert(`Вы ответили правильно на ${correctCount} из ${quiz.length} вопросов.`);
+      playBtn5.textContent = 'Играть!';
+      quizStarted = false;
+
+      // Очистка интерфейса после окончания
+      input5.remove();
+      input5 = null;
+      // Восстановим исходный текст параграфа alt-task
+      taskParagraph.textContent = 'Отвечай на вопросы викторины с вариантами ответов.';
+    }
+  }
+});
+
+function showQuestion() {
+  const q = quiz[currentQuestionIndex];
+  taskParagraph.textContent = `${q.question}\n${q.options.join('\n')}`;
+}

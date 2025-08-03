@@ -1,121 +1,117 @@
 // Задание 1
-const firstArr = [1, 5, 4, 10, 0, 3];
-for (let i = 0; i < firstArr.length; i++) {
-  console.log(firstArr[i]); // выводим элемент
-
-  if (firstArr[i] === 10) {
-    break; // останавливаем цикл при встрече числа 10
-  }
-}
+let str = 'js';
+let upperStr = str.toUpperCase();
+console.log(upperStr); // Выводит JS
 
 // Задание 2
-const secondArr = [1, 5, 4, 10, 0, 3];
-const index = secondArr.indexOf(4);
-console.log(index); // Отсчет с нуля - Ответ 2
-
+function filterByStart(arr, startStr) {
+  const lowerStart = startStr.toLowerCase();
+  return arr.filter(item => item.toLowerCase().startsWith(lowerStart));
+}
+const fruits = ['Apple', 'apricot', 'Banana', 'Avocado', 'berry'];
+const filtered = filterByStart(fruits, 'ap');
+console.log(filtered); // ['Apple', 'apricot']
 
 // Задание 3
-const thirdArr = [1, 3, 5, 10, 20];
-const result = thirdArr.join(' ');
-console.log(result); // Выводит "1 3 5 10 20"
+const num = 32.58884;
+
+const roundDown = Math.floor(num);  // Округляем вниз
+const roundUp = Math.ceil(num);     // Округляем вверх
+const roundNearest = Math.round(num); // Округляем до ближайшего целого числа
+
+console.log('Округляем вниз:', roundDown); // 32
+console.log('Округляем вверх:', roundUp); // 33
+console.log('Округляем до ближайшего целого числа:', roundNearest); // 33
 
 // Задание 4
-const matrix = [];
-for (let i = 0; i < 3; i++) {
-  const row = []; // Создаём новую строку (вложенный массив)
-  for (let j = 0; j < 3; j++) {
-    row.push(1); // Заполняем строку единицами
-  }
-  matrix.push(row); // Добавляем строку в основной массив
-}
+const numbers = [52, 53, 49, 77, 21, 32];
 
-console.log(matrix);
+const minValue = Math.min(...numbers);
+const maxValue = Math.max(...numbers);
+
+console.log('Минимальное значение:', minValue); // 21
+console.log('Максимальное значение:', maxValue); // 77
 
 // Задание 5
-const fourthArr = [1, 1, 1];
-
-fourthArr.push(2, 2, 2); // добавляем двойки в конец массива
-
-console.log(fourthArr);
+function outRndNum() {
+  // Math.random() генерит число от 0 до 0.999...
+  // Умножаем на 10 
+  // Math.floor() округляет вниз до целого
+  // Плюс 1, получаем диапазон от 1 до 10
+  const randomNumber = Math.floor(Math.random() * 10) + 1;
+  console.log(randomNumber);
+}
 
 // Задание 6
-const fifthArr = [9, 8, 7, 'a', 6, 5];
 
-fifthArr.sort(); // Сортируем массив
+function getRandomArray(n) {
+  // Вычисляем длину массива — 1/2 от n-(рандомное число) округляем вниз
+  const length = Math.floor(n / 2);
 
-console.log(fifthArr); // Получаем ['5', '6', '7', '8', '9', 'a']
+  // Массив для результата
+  const result = [];
 
-const onlyNumbers = fifthArr.filter(item => typeof item === 'number'); // Оставляем только числа
+  // Цикл выполнится length раз - 1/2n
+  for (let i = 0; i < length; i++) {
+    // Генерим число от 0 до n-1
+    // Math.random() генерим новое число от 0 до 0,999... и умножаем на n
+    // получаем от 0 до чуть меньше n
+    // Math.floor и округляем вниз до целого
+    const randomNum = Math.floor(Math.random() * n);
 
-console.log(onlyNumbers); // Получаем [5, 6, 7, 8, 9]
+    // результат идет в массив
+    result.push(randomNum);
+  }
+
+  // Выдаем массив с результатами
+  return result;
+}
 
 // Задание 7
-const num = [9, 8, 7, 6, 5];
-const userInput = prompt('Угадай число'); // ставим задачу
-
-if (num.includes(Number(userInput))) {
-  alert('Угадал');
-} else {
-  alert('Не угадал');
+function getRandomInRange(min, max) {
+  // Округляем 
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  // Генерим число между мин и макс включительно
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // Задание 8
-const str = 'abcdef';
-// три в одном
-const reversedStr = str.split('').reverse().join(''); 
-console.log(reversedStr); // 'fedcba'
-
+const currentDate = new Date();
+console.log(currentDate);
 
 // Задание 9
-const seventhArr = [[1, 2, 3], [4, 5, 6]];
-const flattened = [...seventhArr[0], ...seventhArr[1]];
-console.log(flattened); // [1, 2, 3, 4, 5, 6]
+// Текущая дата из задания 8
+const futureDate = new Date(currentDate);
+
+// Плюс 73
+futureDate.setDate(futureDate.getDate() + 73);
+
+console.log("Текущая дата:", currentDate.toDateString());
+console.log("Дата через 73 дня:", futureDate.toDateString());
 
 // Задание 10
-const numbers = [3, 7, 1, 5, 9];
+function formatRussianDate(date) {
+  const daysOfWeek = [
+    "воскресенье", "понедельник", "вторник", "среда",
+    "четверг", "пятница", "суббота"
+  ];
 
-for (let i = 0; i < numbers.length - 1; i++) {
-  const sum = numbers[i] + numbers[i + 1];
-  console.log(`Сумма элементов с индексами ${i} и ${i + 1} равна ${sum}`);
+  const months = [
+    "января", "февраля", "марта", "апреля",
+    "мая", "июня", "июля", "августа",
+    "сентября", "октября", "ноября", "декабря"
+  ];
+
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  const weekday = daysOfWeek[date.getDay()];
+
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+
+  return `Дата: ${day} ${month} ${year} — это ${weekday}.
+Время: ${hours}:${minutes}:${seconds}`;
 }
-
-// Задание 11
-function getSquares(arr) {
-  return arr.map(num => num * num);
-}
-
-// Задание 12
-function getLengths(arr) {
-  return arr.map(str => str.length);
-}
-
-// Задание 13
-function getNegativeNumbers(arr) {
-  return arr.filter(num => num < 0);
-}
-
-// Задание 14
-const number = []; // пустой массив
-for (let i = 0; i < 10; i++) {  // случайнык числа
-  numbers.push(Math.floor(Math.random() * 11));
-} // генерим число от 0 до 1, умнож на 11, чтобы получить от 0 до 10.999,
-  // Math.floor округляет вниз до целого
-
-const evenNumbers = numbers.filter(num => num % 2 === 0);
-
-console.log('Исходный массив:', numbers);
-console.log('Массив с четными числами:', evenNumbers);
-
-// Задание 15
-const numbe = [];
-
-for (let i = 0; i < 6; i++) {
-  numbe.push(Math.floor(Math.random() * 10) + 1);
-}
-
-const sum = numbe.reduce((accumulator, current) => accumulator + current, 0);
-
-const average = sum / numbe.length;
-
-console.log('Массив:', numbe);
-console.log('Среднее арифметическое:', average);
