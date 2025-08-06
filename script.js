@@ -189,7 +189,123 @@ function reverseText(text) {
 }
 
 
+// Игра №4 Камень, Ножницы, Бумага
+let playBtn4 = document.querySelector('#mini-game-4 .alt-play'); // ищем ID-игры и ждем клик по кнопке
+let container4 = document.querySelector('#mini-game-4 .alt-game-enter'); // контейнер хрнения элементов коммуникации с пользователем
+let taskText4 = document.querySelector('#mini-game-4 .alt-task'); // призыв к игре - скрыть после запуска
 
+// переменные состояния игры
+let isRPSStarted = false; // флаг состояния
+let input4; // поле ввода 
+let message4; // сообщения пользователю
+
+// ждем клик 
+playBtn4.addEventListener('click', function (event) {
+  event.preventDefault(); // отменяем стандартное состояние кнопки(переход по ссылке)
+
+  // Игра - запуск
+  // создали флаг запуска игры
+  if (!isRPSStarted) {
+    isRPSStarted = true;
+    // меняем функцию кнопки
+    playBtn4.textContent = 'Проверить!';
+
+    // скрываем призыв играть
+    if (taskText4) taskText4.style.display = 'none';
+
+    // Удаляем старые элементы
+    if (input4 && input4.remove) input4.remove();
+    if (message4 && message4.remove) message4.remove();
+
+    // инструкция к игре - новый параграф
+    message4 = document.createElement('p');
+    message4.classList.add('alt-message');
+    message4.textContent = 'Выберите ваш вариант: 1.Камень, 2.Ножницы или 3.Бумага.';
+
+    // Поле ввода
+    input4 = document.createElement('input');
+    input4.classList.add('alt-input');
+    input4.type = 'text';
+    input4.placeholder = 'Ваш выбор';
+
+    // добавляем элементы в контенйер 
+    container4.appendChild(message4);
+    container4.appendChild(input4);
+
+    // проверяем ответ
+    // если кнопка нажата второй раз (проверить)
+  } else {
+    let userChoice = input4.value.trim().toLowerCase();
+
+    // если кнопку нажали без варианта ответа
+    if (userChoice === '') {
+      // выводим сообщене
+      message4.textContent = 'Пожалуйста, выберите один из вариантов ответа!';
+      // меняем кнопку на играть
+      playBtn4.textContent = 'Играть!';
+      // флаг готов начать с начала
+      isRPSStarted = false;
+      return;
+    }
+
+    // варианты ответа
+    const options = ['камень', 'ножницы', 'бумага'];
+
+    // переводим числа в текст
+    if (userChoice === '1') {
+      userChoice = 'камень';
+    } else if (userChoice === '2') {
+      userChoice = 'ножницы';
+    } else if (userChoice === '3') {
+      userChoice = 'бумага';
+    } else {
+      userChoice = userChoice.replace(/[0-9.\s]/g, '');
+    }
+
+    // если ввели некорректный ответ
+    const validInputs = ['камень', 'ножницы', 'бумага'];
+    
+    if (!validInputs.includes(userChoice)) {
+      message4.textContent = 'Некорректный ввод! Введите 1, 2, 3 или камень, ножницы, бумага.';
+      // меняем кнопку на играть
+      playBtn4.textContent = 'Играть!';
+      // флаг готов начать с начала
+      isRPSStarted = false;
+      return;
+    }
+    
+    // играет комп - рандом (0 или 1) * кол-во вариантов ответа 3
+    let computerChoice = options[Math.floor(Math.random() * options.length)];
+
+    // выбор победителя
+    let result;
+    // ничья
+    if (userChoice === computerChoice) {
+      result = 'Ничья!';
+    
+    // условия победы пользователя
+    } else if (
+      (userChoice === 'камень' && computerChoice === 'ножницы') ||
+      (userChoice === 'ножницы' && computerChoice === 'бумага') ||
+      (userChoice === 'бумага' && computerChoice === 'камень')
+    ) {
+      result = 'Вы выиграли!';
+    
+    // отсальные варианты
+    } else {
+      result = 'Вы проиграли!';
+    }
+
+    // вывод результатов игры
+    message4.textContent = `Вы выбрали: ${userChoice}. Компьютер выбрал: ${computerChoice}. ${result}`;
+    // меняем кнопку на играть
+    playBtn4.textContent = 'Играть!';
+    // флаг готов начать с начала
+    isRPSStarted = false;
+  }
+});
+
+// Игра №5 Простая викторина
 const quiz = [
   {
     question: "Столица Франции",
