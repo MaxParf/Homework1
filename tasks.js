@@ -1,89 +1,79 @@
-// Задание 1
-const people = [
-  { name: 'Глеб', age: 29 },
-  { name: 'Анна', age: 17 },
-  { name: 'Олег', age: 7 },
-  { name: 'Оксана', age: 47 }
-];
+// Задача 1
+// Ищем заголовок и кнопку в первом задании
+const title1 = document.querySelector('#ts1 h1');
+const button1 = document.querySelector('#ts1 .button');
 
-// Сортировка по возрасту по возрастанию
-// коллбек - функция если а или б < 0 то ставим вперед
-// а если = 0 то ничего не меняем 
-people.sort(function(a, b) {
-  return a.age - b.age;
+// Ждем клик
+button1.addEventListener('click', function () {
+  title1.style.display = 'none';
 });
 
-console.log(people);
+// Задача 2
+// Ищем параграф и кнопку
+const paragraph2 = document.querySelector('#ts2 p'); // первый <p> в блоке
+const button2 = document.querySelector('#ts2 .button'); // кнопка
 
-// Задание 2
-function isPositive(num) {
-  return num > 0;
-}
+// Ждем клик
+button2.addEventListener('click', function () {
+  // меняем цвет
+  paragraph2.style.color = 'blue';
+});
 
-function isMale(person) {
-  return person.gender === 'male';
-}
-
-function filter(arr, ruleFunction) {
-  const output = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    if (ruleFunction(arr[i])) {
-      output.push(arr[i]);
-    }
-  }
-
-  return output;
-}
-
-console.log(filter([3, -4, 1, 9], isPositive));
-// → [3, 1, 9]
-
-const humans = [
-   {name: 'Глеб', gender: 'male'},
-   {name: 'Анна', gender: 'female'},
-   {name: 'Олег', gender: 'male'},
-   {name: 'Оксана', gender: 'female'}
-];
-
-console.log(filter(humans, isMale));
-// → [{name: 'Глеб', gender: 'male'}, {name: 'Олег', gender: 'male'}]
-
-// Задание 3
-// Запуск интервала, каждые 3 секунды вывод текущей даты
-const intervalId = setInterval(() => {
-  console.log(new Date());
-}, 3000); // 3000 мс = 3 секунды
-
-// Запуск таймера, через 30 секунд стоп интервала
-setTimeout(() => {
-  // Останавливаем setInterval
-  clearInterval(intervalId); 
-  console.log("30 секунд прошло");
-}, 30000); // 30000 мс = 30 секунд
+// Задача 3
+// Ищем и находим
+const title3 = document.querySelector('#ts3 h1');
+const button3 = document.querySelector('#ts3 .button');
+// Ждем и дожидаемся
+button3.addEventListener('click', function () {
+  title3.textContent = 'Привет, мир!';
+});
 
 // Задание 4
-function delayForSecond(callback) {
-  setTimeout(callback, 1000); // запуск коллбека через 1 сек
-}
+const button4 = document.querySelector('#ts4 .button');
 
-delayForSecond(function () {
-  console.log('Привет, Глеб!');
+button4.addEventListener('click', function () {
+  // Ищем все description
+  const descriptions = document.querySelectorAll('.description');
+  // Перебираем и меняем текст
+  descriptions.forEach(function (element) {
+    element.textContent = 'Измененный текст';
+  });
 });
 
 // Задание 5
-function delayForSecond(cb) {
-    setTimeout(() => {
-        console.log('Прошла одна секунда');
-        if(cb) {  cb(); }
-    }, 1000)
-}
+const button5 = document.querySelector('#ts5 .button');
 
-function sayHi (name) {
-    console.log(`Привет, ${name}!`);
-}
-// обернув коллбек в доп.скобки и задав стрелочную функцию 
-// мы вернули его в функцию delayForSecond
-// иначе sayHi('Глеб') выполнится сразщу
-delayForSecond(() => sayHi('Глеб'));
+button5.addEventListener('click', function () {
+  // Ищем все description
+  const descriptions = document.querySelectorAll('#ts5 .description');
 
+  // Перебираем и меняем текст
+  descriptions.forEach(function (elem) {
+    elem.textContent = 'Новый текст';
+  });
+});
+
+// Задание 6
+const button6 = document.querySelector('#ts6 .button');
+
+button6.addEventListener('click', function () {
+  // Создаем новый параграф <p>
+  const newParagraph = document.createElement('p');
+
+  // добавляем текст
+  newParagraph.textContent = 'Новый абзац';
+  document.body.appendChild(newParagraph);
+});
+
+// Задание 7
+const button7 = document.querySelector('#ts7 .button');
+
+button7.addEventListener('click', function () {
+  // Ищем первый description
+  const firstDescription = document.querySelector('.description');
+
+  // Если найден то удаляем
+  if (firstDescription) {
+    firstDescription.remove();
+  }
+});
