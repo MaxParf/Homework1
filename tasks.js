@@ -1,117 +1,79 @@
-// Задание 1
-let str = 'js';
-let upperStr = str.toUpperCase();
-console.log(upperStr); // Выводит JS
+// Задача 1
+// Ищем заголовок и кнопку в первом задании
+const title1 = document.querySelector('#ts1 h1');
+const button1 = document.querySelector('#ts1 .button');
 
-// Задание 2
-function filterByStart(arr, startStr) {
-  const lowerStart = startStr.toLowerCase();
-  return arr.filter(item => item.toLowerCase().startsWith(lowerStart));
-}
-const fruits = ['Apple', 'apricot', 'Banana', 'Avocado', 'berry'];
-const filtered = filterByStart(fruits, 'ap');
-console.log(filtered); // ['Apple', 'apricot']
+// Ждем клик
+button1.addEventListener('click', function () {
+  title1.style.display = 'none';
+});
 
-// Задание 3
-const num = 32.58884;
+// Задача 2
+// Ищем параграф и кнопку
+const paragraph2 = document.querySelector('#ts2 p'); // первый <p> в блоке
+const button2 = document.querySelector('#ts2 .button'); // кнопка
+// Ждем клик
+button2.addEventListener('click', function () {
+  // меняем цвет
+  paragraph2.style.color = 'blue';
+});
 
-const roundDown = Math.floor(num);  // Округляем вниз
-const roundUp = Math.ceil(num);     // Округляем вверх
-const roundNearest = Math.round(num); // Округляем до ближайшего целого числа
-
-console.log('Округляем вниз:', roundDown); // 32
-console.log('Округляем вверх:', roundUp); // 33
-console.log('Округляем до ближайшего целого числа:', roundNearest); // 33
+// Задача 3
+// Ищем и находим
+const title3 = document.querySelector('#ts3 h1');
+const button3 = document.querySelector('#ts3 .button');
+// Ждем и дожидаемся
+button3.addEventListener('click', function () {
+  title3.textContent = 'Привет, мир!';
+});
 
 // Задание 4
-const numbers = [52, 53, 49, 77, 21, 32];
+const button4 = document.querySelector('#ts4 .button');
 
-const minValue = Math.min(...numbers);
-const maxValue = Math.max(...numbers);
-
-console.log('Минимальное значение:', minValue); // 21
-console.log('Максимальное значение:', maxValue); // 77
+button4.addEventListener('click', function () {
+  // Ищем все description
+  const descriptions = document.querySelectorAll('.description');
+  // Перебираем и меняем текст
+  descriptions.forEach(function (element) {
+    element.textContent = 'Измененный текст';
+  });
+});
 
 // Задание 5
-function outRndNum() {
-  // Math.random() генерит число от 0 до 0.999...
-  // Умножаем на 10 
-  // Math.floor() округляет вниз до целого
-  // Плюс 1, получаем диапазон от 1 до 10
-  const randomNumber = Math.floor(Math.random() * 10) + 1;
-  console.log(randomNumber);
-}
+const button5 = document.querySelector('#ts5 .button');
+button5.addEventListener('click', function () {
+  // Ищем все description
+  const descriptions = document.querySelectorAll('#ts5 .description');
+  // Перебираем и меняем текст
+  descriptions.forEach(function (elem) {
+    elem.textContent = 'Новый текст';
+  });
+});
 
 // Задание 6
+const button6 = document.querySelector('#ts6 .button');
 
-function getRandomArray(n) {
-  // Вычисляем длину массива — 1/2 от n-(рандомное число) округляем вниз
-  const length = Math.floor(n / 2);
+button6.addEventListener('click', function () {
+  // Создаем новый параграф <p>
+  const newParagraph = document.createElement('p');
 
-  // Массив для результата
-  const result = [];
+  // Добавляем текст
+  newParagraph.textContent = 'Новый абзац';
 
-  // Цикл выполнится length раз - 1/2n
-  for (let i = 0; i < length; i++) {
-    // Генерим число от 0 до n-1
-    // Math.random() генерим новое число от 0 до 0,999... и умножаем на n
-    // получаем от 0 до чуть меньше n
-    // Math.floor и округляем вниз до целого
-    const randomNum = Math.floor(Math.random() * n);
-
-    // результат идет в массив
-    result.push(randomNum);
-  }
-
-  // Выдаем массив с результатами
-  return result;
-}
+  // Добавляем новый элемент в конец <body>
+  document.body.appendChild(newParagraph);
+});
 
 // Задание 7
-function getRandomInRange(min, max) {
-  // Округляем 
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  // Генерим число между мин и макс включительно
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const button7 = document.querySelector('#ts7 .button');
 
-// Задание 8
-const currentDate = new Date();
-console.log(currentDate);
+button7.addEventListener('click', function () {
+  // Ищем первый description
+  const firstDescription = document.querySelector('.description');
 
-// Задание 9
-// Текущая дата из задания 8
-const futureDate = new Date(currentDate);
+  // Если нашли удаляем
+  if (firstDescription) {
+    firstDescription.remove();
+  }
+});
 
-// Плюс 73
-futureDate.setDate(futureDate.getDate() + 73);
-
-console.log("Текущая дата:", currentDate.toDateString());
-console.log("Дата через 73 дня:", futureDate.toDateString());
-
-// Задание 10
-function formatRussianDate(date) {
-  const daysOfWeek = [
-    "воскресенье", "понедельник", "вторник", "среда",
-    "четверг", "пятница", "суббота"
-  ];
-
-  const months = [
-    "января", "февраля", "марта", "апреля",
-    "мая", "июня", "июля", "августа",
-    "сентября", "октября", "ноября", "декабря"
-  ];
-
-  const day = date.getDate();
-  const month = months[date.getMonth()];
-  const year = date.getFullYear();
-  const weekday = daysOfWeek[date.getDay()];
-
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
-  const seconds = String(date.getSeconds()).padStart(2, "0");
-
-  return `Дата: ${day} ${month} ${year} — это ${weekday}.
-Время: ${hours}:${minutes}:${seconds}`;
-}
