@@ -392,3 +392,59 @@ function showQuestion() {
   const q = quiz[currentQuestionIndex];
   taskParagraph.textContent = `${q.question}\n${q.options.join('\n')}`;
 }
+// 1. Плавный скролл от кнопки .ahead к блоку #about
+document.querySelector('.ahead').addEventListener('click', function (e) {
+  e.preventDefault();
+  document.querySelector('#about').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+});
+
+// 2. Плавный скролл к конкретной мини-игре по id
+document.querySelectorAll('.game-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    // например "#mini-game-1"
+    const targetId = this.getAttribute('href'); 
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Игра 6
+// Ищем кнопку
+const playButton6 = document.querySelector('#mini-game-6 .alt-play');
+
+// Ищем шемстой блок по ID (будем менять его фон)
+const gameBlock6 = document.getElementById('mini-game-6');
+
+// Генерим случайный цвет фона в НЕХ
+function getRandomColor() {
+  // Math.random() генерим число от 0 до 1
+  // Умножаем на 16777215 (кол-во оттенков)
+  // переводим число в шестнадцатеричный формат
+  let color = Math.floor(Math.random() * 16777215).toString(16);
+
+  // Если цвет короче 6 символов — дополняем нулями
+  while (color.length < 6) {
+    color = '0' + color;
+  }
+
+  return `#${color}`;
+}
+
+// Слушаем кнопку
+playButton6.addEventListener('click', function () {
+  // Получаем какойто цвет
+  const randomColor = getRandomColor();
+
+  // Меняем фон у блока 
+  gameBlock6.style.backgroundColor = randomColor;
+});
+

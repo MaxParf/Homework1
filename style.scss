@@ -140,6 +140,11 @@ a {
     width: 100%;
 }
 
+.num-space {
+  display: inline-block;
+  width: 5px;
+}
+
 .ahead {
     background: #202027;
     border: 1px solid #202027;
@@ -165,11 +170,40 @@ a {
 }
 
 .scroll {
-    width: 100vw;
-    height: 90px;
-    background-color: #BCEC30;
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 90px;
+  background: #BCEC30;
+  overflow: hidden;
+  padding: 27px 0;
+  display: flex;
+  align-items: center;
+
+  &__track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    // Непрерывное движение
+    animation: marquee 20s linear infinite;
+    will-change: transform;
+  }
+
+  &__line {
+    flex: 0 0 auto;
+    height: 36px;
+    display: block;
+    // пробел 
+    margin-right: 51px;
+  }
+}
+
+/* Ключевые кадры — сдвиг ровно на половину дорожки */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 //Основной контент
@@ -196,13 +230,13 @@ a {
 
     &-stars-2 {
         position: absolute;
-        top: 882px;
-        left: 40px;
+        top: 824px;
+        left: 41px;
     }
 
     &-stars-3 {
         position: absolute;
-        top: 77px;
+        top: 111px;
         right: 0;
     }
 }
@@ -232,6 +266,7 @@ a {
         font-size: 24px;
         color: #FFFFFF;
         margin-top: 24px;
+        line-height: 32px;
     }
 
     @media (max-width: 767px) {
@@ -314,7 +349,7 @@ a {
     }
 
     .game-enter {
-        padding: 32px 32px 32px 36px;
+        padding: 28px 32px 32px 31px;
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -334,6 +369,7 @@ a {
         height: 36px;
         font-weight: 500;
         font-size: 16px;
+        line-height: 110%;
         color: #202027;
         cursor: pointer;
         display: flex;
@@ -367,23 +403,23 @@ a {
 
         &-1 {
             position: absolute;
-            top: 93px;
-            right: 124px;
+            top: 90px;
+            right: 125px;
             width: 35.15px;
             height: 35.15px;
         }
 
         &-2 {
             position: absolute;
-            top: 126px;
-            right: 45px;
+            top: 125px;
+            right: 48px;
             width: 68.86px;
             height: 68.86px;
         }
 
         &-3 {
             position: absolute;
-            bottom: 45px;
+            bottom: 5px;
             right: 150px;
             width: 41px;
             height: 41px;
@@ -391,7 +427,7 @@ a {
 
         &-4 {
             position: absolute;
-            bottom: 65px;
+            bottom: 25px;
             right: 52px;
             width: 69px;
             height: 69px;
@@ -403,7 +439,7 @@ a {
 .alt-about {
     max-width: 1200px;
     width: 100%;
-    padding: 0 20px;
+    padding: 32px 0px;
     box-sizing: border-box;
     position: relative;
     z-index: 3;
@@ -482,7 +518,9 @@ a {
     color: #202027;
     margin-top: 24px;
 }
-
+.alt-task-mini {
+    display: none;
+}
 .alt-play {
     background: #202027;
     border: 1px solid #202027;
@@ -496,7 +534,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 32px;
+    margin-top: 36px;
 }
 
 .alt-play:hover {

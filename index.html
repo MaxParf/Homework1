@@ -4,6 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Homework1</title>
+        <link rel="icon" type="image/png"
+            href="images/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml"
+            href="images/favicon/favicon.svg">
+        <link rel="shortcut icon" href="images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="images/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="images/favicon/site.webmanifest">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
@@ -25,8 +33,7 @@
                 </div>
             </div>
             <div class="top">
-                <h1 class="titel">Добро пожаловать <span class="break">на мой
-                        сайт мини-игр</span></h1>
+                <h1 class="titel">Добро пожаловать<br>на мой сайт мини-игр</h1>
                 <p class="description">Тебе предстоит пройти несколько
                     увлекательных игр. <span class="break">Если готов, нажимай
                         <span class="highlight">«Поехали!»</span> и <span
@@ -37,7 +44,13 @@
                 <a href="#about" class="ahead">Поехали!</a>
             </div>
             <div class="scroll">
-
+                <div class="scroll__track">
+                    <img class="scroll__line"
+                        src="images/marquee_text/ticker.svg" alt="Игры">
+                    <img class="scroll__line"
+                        src="images/marquee_text/ticker.svg" alt
+                        aria-hidden="true">
+                </div>
             </div>
         </section>
 
@@ -69,7 +82,8 @@
                                 <img src="images/game_1.png" alt="игра-1">
                             </div>
                             <div class="game-enter">
-                                <span class="game-button">Игра № 1</span>
+                                <span class="game-button">Игра №<span
+                                        class="num-space"></span>1</span>
                                 <h3 class="game-title">Угадай число</h3>
                                 <p class="task">Попробуй угадать случайное число
                                     от 1 до 100.</p>
@@ -83,7 +97,8 @@
                                 <img src="images/game_2.png" alt="игра-2">
                             </div>
                             <div class="game-enter">
-                                <span class="game-button">Игра № 2</span>
+                                <span class="game-button">Игра №<span
+                                        class="num-space"></span>2</span>
                                 <h3 class="game-title">Простая арифметика</h3>
                                 <p class="task">Попробуй решить простые
                                     арифметические задачи.</p>
@@ -97,7 +112,8 @@
                                 <img src="images/game_3.png" alt="игра-3">
                             </div>
                             <div class="game-enter">
-                                <span class="game-button">Игра № 3</span>
+                                <span class="game-button">Игра №<span
+                                        class="num-space"></span>3</span>
                                 <h3 class="game-title">Переверни текст</h3>
                                 <p class="task">Попробуй ввести текст, который
                                     будет перевернут.</p>
@@ -111,12 +127,14 @@
                                 <img src="images/game_4.png" alt="игра-4">
                             </div>
                             <div class="game-enter">
-                                <span class="game-button">Игра № 4</span>
+                                <span class="game-button">Игра №<span
+                                        class="num-space"></span>4</span>
                                 <h3 class="game-title">Камень, <span
-                                        class="break">ножницы, бумага</span>
+                                        class="break"> ножницы, </span><span
+                                        class="break"> бумага </span>
                                 </h3>
-                                <p class="task">Сыграй в популярную игру против
-                                    компьютера.</p>
+                                <p class="task">Сыграй в популярную игру
+                                    против компьютера.</p>
                                 <span class="play">Играть!</span>
                             </div>
                         </a>
@@ -127,9 +145,12 @@
                                 <img src="images/game_5.png" alt="игра-5">
                             </div>
                             <div class="game-enter">
-                                <span class="game-button">Игра № 5</span>
-                                <h3 class="game-title">Простая викторина</h3>
-                                <p class="task">Отвечай на вопросы викторины с
+                                <span class="game-button">Игра №<span
+                                        class="num-space"></span>5</span>
+                                <h3 class="game-title">Простая
+                                    викторина</h3>
+                                <p class="task">Отвечай на вопросы викторины
+                                    с
                                     вариантами ответов.</p>
                                 <span class="play">Играть!</span>
                             </div>
@@ -141,7 +162,8 @@
                                 <img src="images/game_6.png" alt="игра-6">
                             </div>
                             <div class="game-enter">
-                                <span class="game-button">Игра № 6</span>
+                                <span class="game-button">Игра №<span
+                                        class="num-space"></span>6</span>
                                 <h3 class="game-title">Генератор случайных
                                     цветов</h3>
                                 <p class="task">Игра, в которой при клике на
@@ -156,10 +178,14 @@
         </section>
         <section class="alt">
             <div class="alt-stars">
-                <img class="alt-stars-1" src="images/Star_7.svg" alt="star_7">
-                <img class="alt-stars-2" src="images/Star_6.svg" alt="star_6">
-                <img class="alt-stars-3" src="images/Star_10.svg" alt="star_10">
-                <img class="alt-stars-4" src="images/Star_8.svg" alt="star_8">
+                <img class="alt-stars-1" src="images/Star_7.svg"
+                    alt="star_7">
+                <img class="alt-stars-2" src="images/Star_6.svg"
+                    alt="star_6">
+                <img class="alt-stars-3" src="images/Star_10.svg"
+                    alt="star_10">
+                <img class="alt-stars-4" src="images/Star_8.svg"
+                    alt="star_8">
             </div>
             <div class="alt-about">
                 <h2 class="alt-about-titel">Мини-игры</h2>
@@ -168,7 +194,12 @@
                         <a class="alt-game-link alt-item-1">
                             <div class="alt-game-enter">
                                 <h3 class="alt-game-title">Угадай число</h3>
-                                <p class="alt-task">Попробуй угадать случайное
+                                <p class="alt-task">Попробуй угадать
+                                    случайное
+                                    <span class="break">число от 1 до
+                                        100.</span></p>
+                                <p class="alt-task-mini">Попробуй угадать
+                                    случайное
                                     <span class="break">число от 1 до
                                         100.</span></p>
                                 <span onclick="startGame"
@@ -186,6 +217,8 @@
                                     арифметика</h3>
                                 <p class="alt-task">Попробуй решить простые
                                     арифметические задачи.</p>
+                                <p class="alt-task-mini">Попробуй решить простые
+                                    арифметические задачи.</p>
                                 <span class="alt-play">Играть!</span>
                             </div>
                             <div class="alt-picture">
@@ -196,9 +229,12 @@
                     <div class="alt-game" id="mini-game-3">
                         <a class="alt-game-link alt-item-3">
                             <div class="alt-game-enter">
-                                <h3 class="alt-game-title">Переверни текст</h3>
+                                <h3 class="alt-game-title">Переверни
+                                    текст</h3>
                                 <p class="alt-task">Попробуй ввести текст,
-                                    который будет перевернут.</p>
+                                    который<br>будет перевернут.</p>
+                                <p class="alt-task-mini">Попробуй ввести текст,
+                                    который<br>будет перевернут.</p>
                                 <span class="alt-play">Играть!</span>
                             </div>
                             <div class="alt-picture">
@@ -207,13 +243,16 @@
                         </a>
                     </div>
                     <div class="alt-game" id="mini-game-4">
-                        <a href="#game4.html" class="alt-game-link alt-item-4">
+                        <a href="#game4.html"
+                            class="alt-game-link alt-item-4">
                             <div class="alt-game-enter">
-                                <h3 class="alt-game-title">Камень, <span
-                                        class="alt-break">ножницы,
-                                        бумага</span></h3>
-                                <p class="alt-task">Сыграй в популярную игру
-                                    против компьютера.</p>
+                                <h3 class="alt-game-title">
+                                    Камень,<br>ножницы<br>бумага
+                                </h3>
+                                <p class="alt-task">Сыграй в популярную
+                                    игру<br>против компьютера.</p>
+                                <p class="alt-task-mini">Сыграй в популярную
+                                    игру<br>против компьютера.</p>
                                 <span class="alt-play">Играть!</span>
                             </div>
                             <div class="alt-picture">
@@ -226,8 +265,12 @@
                             <div class="alt-game-enter">
                                 <h3 class="alt-game-title">Простая
                                     викторина</h3>
-                                <p class="alt-task">Отвечай на вопросы викторины
-                                    с вариантами ответов.</p>
+                                <p class="alt-task">Отвечай на вопросы
+                                    викторины<br>с вариантами
+                                    ответов.</p>
+                                <p class="alt-task-mini">Отвечай на вопросы
+                                    викторины<br>с вариантами
+                                    ответов.</p>
                                 <span class="alt-play">Играть!</span>
                             </div>
                             <div class="alt-picture">
@@ -236,12 +279,16 @@
                         </a>
                     </div>
                     <div class="alt-game" id="mini-game-6">
-                        <a href="game6.html" class="alt-game-link alt-item-6">
+                        <a href="#game6.html"
+                            class="alt-game-link alt-item-6">
                             <div class="alt-game-enter">
-                                <h3 class="alt-game-title">Генератор случайных
-                                    цветов</h3>
+                                <h3
+                                    class="alt-game-title">Генератор<br>случайных<br>цветов</h3>
                                 <p class="alt-task">Игра, в которой при клике на
                                     кнопку фон страницы меняется на
+                                    случайный.</p>
+                                <p class="alt-task-mini">Игра, в которой при
+                                    клике<br>на кнопку фон страницы меняется на
                                     случайный.</p>
                                 <span class="alt-play">Играть!</span>
                             </div>

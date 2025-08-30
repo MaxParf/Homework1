@@ -30,6 +30,17 @@
     height: 700px;
   }
 
+  .top {
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 147px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
   .main {
     margin: 0;
     padding: 0;
@@ -40,7 +51,12 @@
     text-align: center;
   }
 
+  .description {
+    display: none;
+  }
+
   .description-mini {
+    display: block;
     font-size: 16px;
     text-align: center;
     margin-top: 24px;
@@ -50,7 +66,7 @@
     width: 285px;
     height: 55px;
     font-size: 16px;
-    margin-top: 36px;
+    margin-top: 40px;
   }
 
   .stars .star.star--1 {
@@ -67,118 +83,139 @@
 
   .stars .star.star--3 {
     top: 557px;
-    right: 86px;
+    right: 84px;
     width: 18px;
   }
 
   .stars .star.star--4 {
     top: 580px;
-    right: 34px;
+    right: 32px;
     width: 39px;
   }
 
-  .top {
-    max-width: 375px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 147px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-
   .scroll {
-    height: 51px;
+    padding: 0px;
+
+    &__track {
+    animation: marquee 20s linear infinite;
+  }
+    height: 51.34px;
+      &__line {
+      height: 19.34px;
+      margin-right: 27.4px;
+  }
   }
 
   .main-stars {
     display: none;
   }
 
-  .description {
+  .about {
     display: none;
   }
 
-  .description-mini {
-    display: block;
+.alt-about {
+  padding: 48.34px 16px 0px 16px;
+  margin-bottom: 9.88px;
+
+  &-titel {
+    font-size: 40px;
   }
 
-  .about-description,
-  .about-titel {
-    display: none;
+    .alt-games {
+      gap: 25.4px;
+      margin-top: 48px;
   }
 
-  .about-mini {
-    display: block;
-    padding: 0 16px;
-  }
+    .alt-game {
+      width: 343px;
+      height: auto;
 
-  .about .games {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    width: 100%;
-    padding: 0 16px;
-    margin-top: 48px;
-
-    .game-button {
-      display: none;
     }
 
-    .task {
-      display: inline;
-      font-weight: 400;
-      font-size: 16px;
-      color: #000000;
-      margin-top: 16px;
-    }
-
-    .play {
-      background: #202027;
-      border: 1px solid #202027;
-      border-radius: 60px;
-      width: 255px;
-      height: 55px;
-      font-weight: 600;
-      font-size: 16px;
-      color: #ffffff;
-      cursor: pointer;
+    .alt-item-1,
+    .alt-item-2,
+    .alt-item-3,
+    .alt-item-4,
+    .alt-item-5,
+    .alt-item-6 {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 32px;
+      flex-direction: column-reverse;
     }
-  }
+}
 
-  .about .game-item {
-    grid-column: auto !important;
-    grid-row: auto !important;
+.alt-games {
+  gap: 25px;
+}
+
+.alt-game-enter {
+    margin: 29.04px 29.04px 32.67px 29.04px;
+    width: 284.93px;
     height: auto;
-    width: 343px;
-  }
+}
 
-  .copyright {
-    width: 100vw;
-    height: 100px;
-    background-color: #BCEC30;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.alt-game-title {
+    font-size: 32px;
+}
+.alt-task {
+  display: none;
+}
+.alt-task-mini,
+.alt-message {
+  display: block;
+    font-size: 16px;
+    margin-top: 16px;
+    color: #202027;
+}
 
-  .right {
+.alt-play {
+    width: 285px;
+    height: 55px;
+    font-size: 16px;
+    margin-top: 32px;
+}
+
+.alt-play:hover {
+    background: #ffffff;
+    color: #202027;
+}
+
+.alt-input {
+    border: 1px solid #202027;
+    border-radius: 60px;
+    width: 285px;
+    height: 55px;
     font-weight: 600;
     font-size: 16px;
-    color: #000000;
-  }
+    text-align: center;
+    margin-top: 16px;
+}
 
-  .alt {
+.alt-picture {
+    width: 343px;
+    height: 284.93px;
+
+    img {
+        width: 343px;
+        height: 284.93px;
+        object-fit: cover;
+    }
+}
+
+.copyright {
+    width: 375px;
+    height: 100px;
+}
+
+.right {
+    font-size: 16px;
+}
+
+@media (max-width: 375px) {
+  .alt-stars {
     display: none;
   }
-
-
+}
 }
 
 // Скрыть сайт при очень маленькой ширине
@@ -187,3 +224,4 @@
     display: none;
   }
 }
+
