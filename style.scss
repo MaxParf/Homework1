@@ -1,0 +1,588 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #202027;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+
+}
+
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+a {
+    text-decoration: none;
+}
+
+// Шапка
+
+.header {
+    height: 800px;
+    max-width: 100%;
+    background-color: #E1FF8F;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    .star {
+        position: absolute;
+
+        // индивидуальные позиции звезд в шапке при различных ширинах:
+        &--1 {
+            top: 94px;
+            left: 63px;
+            width: 57px;
+        }
+
+        &--2 {
+            top: 69px;
+            left: 156px;
+            width: 35px;
+        }
+
+        &--3 {
+            position: absolute;
+            top: 538px;
+            right: 455px;
+            width: 37px;
+        }
+
+        &--4 {
+            position: absolute;
+            top: 568px;
+            right: 344px;
+            width: 83px;
+        }
+
+        &--5 {
+            position: absolute;
+            top: 0;
+            right: 0%;
+            height: max-content;
+        }
+
+        @media (max-width: 1009px) {
+            &--5 {
+                display: none;
+            }
+        }
+
+        &--6 {
+            position: absolute;
+            top: 0;
+            right: 0%;
+            height: max-content;
+        }
+
+        @media (min-width: 1010px) {
+            &--6 {
+                display: none;
+            }
+        }
+
+    }
+}
+
+.top {
+    padding-top: clamp(60px, 14vw, 196px);
+    margin-left: 120px;
+    max-width: 1201px;
+    margin-left: 120px;
+    margin-right: 120px;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.titel {
+    font-weight: 700;
+    font-size: 64px;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 26px;
+    line-height: 32px;
+}
+
+@media (max-width: 767px) {
+    .description {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .description-mini {
+        display: none;
+    }
+}
+
+.highlight {
+    font-weight: 600;
+}
+
+// все переносы на новую строку
+.break {
+    display: inline-block;
+    width: 100%;
+}
+
+.num-space {
+  display: inline-block;
+  width: 5px;
+}
+
+.ahead {
+    background: #202027;
+    border: 1px solid #202027;
+    border-radius: 60px;
+    width: 247px;
+    height: 66px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 48px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.ahead:hover {
+    background: #ffffff;
+    color: #202027;
+}
+
+.scroll {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 90px;
+  background: #BCEC30;
+  overflow: hidden;
+  padding: 27px 0;
+  display: flex;
+  align-items: center;
+
+  &__track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    // Непрерывное движение
+    animation: marquee 20s linear infinite;
+    will-change: transform;
+  }
+
+  &__line {
+    flex: 0 0 auto;
+    height: 36px;
+    display: block;
+    // пробел 
+    margin-right: 51px;
+  }
+}
+
+/* Ключевые кадры — сдвиг ровно на половину дорожки */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+//Основной контент
+.main {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &-stars {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &-stars-1 {
+        position: absolute;
+        top: 770px;
+        left: 25px;
+    }
+
+    &-stars-2 {
+        position: absolute;
+        top: 824px;
+        left: 41px;
+    }
+
+    &-stars-3 {
+        position: absolute;
+        top: 111px;
+        right: 0;
+    }
+}
+
+.about {
+    max-width: 1201px;
+    margin-top: 94px;
+    margin-left: 120px;
+    margin-right: 120px;
+    position: relative;
+    z-index: 3;
+
+    &-titel {
+        font-weight: 700;
+        font-size: 64px;
+        color: #FFFFFF;
+    }
+
+    &-mini {
+        font-weight: 700;
+        font-size: 40px;
+        color: #FFFFFF;
+    }
+
+    &-description {
+        font-weight: 400;
+        font-size: 24px;
+        color: #FFFFFF;
+        margin-top: 24px;
+        line-height: 32px;
+    }
+
+    @media (max-width: 767px) {
+
+        &-description,
+        &-titel {
+            display: none;
+        }
+    }
+
+    @media (min-width: 768px) {
+        &-mini {
+            display: none;
+        }
+    }
+
+
+
+    .games {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        width: 1201px;
+        height: auto;
+        padding-top: 72px;
+    }
+
+    .game-item {
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        width: 378px;
+    }
+
+    .item-1 {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        height: 473px;
+    }
+
+    .item-2 {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 2;
+        height: 512px;
+    }
+
+    .item-3 {
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1;
+        height: 473px;
+    }
+
+    .item-4 {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 4;
+        height: 551px;
+    }
+
+    .item-5 {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+        height: 512px;
+    }
+
+    .item-6 {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 4;
+        height: 551px;
+    }
+
+    .picture {
+        width: 100%;
+        border-radius: 30px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .game-enter {
+        padding: 28px 32px 32px 31px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .game-title {
+        font-weight: 700;
+        font-size: 32px;
+        color: #202027;
+    }
+
+    .game-button {
+        background: #F7F7F7;
+        border: 1px solid #F7F7F7;
+        border-radius: 52.58px;
+        width: 108px;
+        height: 36px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 110%;
+        color: #202027;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .play {
+        display: none; // По умолчанию скрываем
+    }
+
+    .task {
+        display: none;
+    }
+
+}
+
+.alt {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &-stars {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+
+        flex-direction: column;
+        width: 100%;
+
+        &-1 {
+            position: absolute;
+            top: 83px;
+            right: 125px;
+            width: 35.15px;
+            height: 35.15px;
+        }
+
+        &-2 {
+            position: absolute;
+            top: 118px;
+            right: 48px;
+            width: 68.86px;
+            height: 68.86px;
+        }
+
+        &-3 {
+            position: absolute;
+            bottom: 45px;
+            right: 150px;
+            width: 41px;
+            height: 41px; 
+        }
+
+        &-4 {
+            position: absolute;
+            bottom: 65px;
+            right: 52px;
+            width: 69px;
+            height: 69px;
+        }
+    }
+
+}
+
+.alt-about {
+    max-width: 1200px;
+    width: 100%;
+    padding: 32px 0px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 3;
+    margin-bottom: 112px;
+
+    &-titel {
+        font-weight: 700;
+        font-size: 64px;
+        color: #FFFFFF;
+    }
+
+    .alt-games {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        margin-top: 72px;
+    }
+
+    .alt-game {
+        background-color: #FFFFFF;
+        border-radius: 44px;
+        overflow: hidden;
+        width: 100%;
+        height: 500px;
+
+    }
+
+    .alt-item-1 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .alt-item-2 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .alt-item-3 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .alt-item-4 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .alt-item-5 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .alt-item-6 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+
+.alt-game-enter {
+    margin: 48px 48px 0px 48px;
+    width: 504px;
+    height: 500px;
+}
+
+.alt-game-title {
+    font-weight: 700;
+    font-size: 48px;
+    color: #202027;
+}
+
+.alt-task,
+.alt-message {
+    font-weight: 400;
+    font-size: 24px;
+    color: #202027;
+    margin-top: 24px;
+    line-height: 32px;
+}
+.alt-task-mini {
+    display: none;
+}
+.alt-play {
+    background: #202027;
+    border: 1px solid #202027;
+    border-radius: 60px;
+    width: 247px;
+    height: 66px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+}
+
+.alt-play:hover {
+    background: #ffffff;
+    color: #202027;
+}
+
+.alt-input {
+    border: 1px solid #202027;
+    border-radius: 60px;
+    width: 247px;
+    height: 66px;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.alt-picture {
+    width: 600px;
+    height: 100%;
+
+    img {
+        width: 102%;
+        height: 500px;
+        object-fit: cover;
+    }
+}
+
+.copyright {
+    height: 150px;
+    background-color: #BCEC30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+}
+
+
+
+@import 'mobile';
