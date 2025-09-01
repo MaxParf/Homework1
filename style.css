@@ -509,7 +509,6 @@ a {
 }
 
 .copyright {
-  width: 100vw;
   height: 150px;
   background-color: #BCEC30;
   display: flex;
@@ -697,7 +696,6 @@ a {
        object-fit: cover;
   }
   .copyright {
-    width: 100vw;
     height: 100px;
   }
   .right {
